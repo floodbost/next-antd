@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import '../styles/App.less'
 
 function MyApp ({ Component, pageProps }: AppProps) {
-  console.log('test', Component, pageProps)
+  console.log('test')
   return (
     <Layout>
        <Component {...pageProps} />

@@ -16,7 +16,9 @@ const withAntdLess = require('next-plugin-antd-less')
 module.exports = withAntdLess({
   reactStrictMode: false,
   // optional
-  modifyVars: { },
+  modifyVars: {
+    '@height-base': '38px'
+  },
   // optional
   lessVarsFilePath: './styles/App.less',
   // optional
