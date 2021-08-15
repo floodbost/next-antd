@@ -1,0 +1,114 @@
+$custom-dark-bg-primary: rgba(31,41,55);
+$custom-dark-text: rgba(156,163,175);
+$custom-dark-bg-menu-active: rgba(22,30,46);
+$custom-dark-menu-text-active: rgba(209,213,219);
+$custom-menu-text-size: .875rem;
+$container-width: 1280px;
+$sidebar-width: 250px;
+
+/*
+:global .popup-dark {
+    &.ant-menu-submenu {
+        background-color: $custom-dark-bg-primary;
+
+        .ant-menu-sub {
+            &.ant-menu-vertical {
+                background: $custom-dark-bg-primary !important;
+            }
+        }
+    }
+}
+*/
+
+.popup-dark {
+    &.ant-menu-submenu {
+        background-color: $custom-dark-bg-primary;
+
+        .ant-menu-sub {
+            &.ant-menu-vertical {
+                background: $custom-dark-bg-primary !important;
+            }
+        }
+    }
+}
+
+.app {
+
+    width: $container-width;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+
+    :global .simplebar-scrollbar::before {
+        background-color: rgba(131, 131, 131, 0.9);
+      }
+
+    :global .site-layout {
+        display: initial;
+        margin-left: $sidebar-width; //from sider
+        width: calc(#{$container-width} - #{$sidebar-width});
+        flex: 0 0 calc(#{$container-width} - #{$sidebar-width});
+    }
+
+    :global .ant-layout-content {
+        margin: 24px 0 24px 24px;
+    }
+
+    :global .ant-layout-sider {
+        overflow-y: scroll;
+        overflow: auto;
+        height: 100vh;
+        //height: 100vh;
+        //min-height:  100vh;
+        position: fixed;
+        //left: 0;
+        background-color: $custom-dark-bg-primary;
+
+        :global .logo {
+            height: 64px;
+        }
+    }
+    
+    :global .ant-layout-sider-dark {
+        :global .ant-menu {
+            &.ant-menu-dark {
+                
+                color: $custom-dark-text;
+                font-size: $custom-menu-text-size;
+                line-height: 1.25rem;
+                background-color: $custom-dark-bg-primary;
+                border: none;
+
+                .ant-menu-item-selected {
+                    background: $custom-dark-bg-menu-active;
+                }
+
+                .ant-menu-item-group {
+                    :global .ant-menu-item-group-title {
+                        color: #606A8C;
+                        text-transform: uppercase;
+                        font-size: .775rem;
+                    }
+                }
+
+                .ant-menu-submenu {
+                    color: $custom-dark-text;
+                    font-size: $custom-menu-text-size;
+                    background: $custom-dark-bg-primary;
+                }
+
+                .ant-menu-sub {
+                    background: $custom-dark-bg-primary;
+                    font-size: $custom-menu-text-size;
+                    &.ant-menu-inline {
+                        background: $custom-dark-bg-primary;
+                        font-size: $custom-menu-text-size;
+                    }
+                }
+
+            }
+        }
+
+    }
+
+}
